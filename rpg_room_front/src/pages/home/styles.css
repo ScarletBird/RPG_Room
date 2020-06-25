@@ -1,0 +1,85 @@
+.title {
+    text-align: center;
+    color: lightgrey;
+    padding-top: 64px;
+    font-size: 80px;
+    font-family: 'Morris Roman';
+}
+.subtitle {
+    text-align: center;
+    color: rgb(172, 167, 167);
+    font-size: 40px;
+    font-family: 'Pangolin';
+}
+section.buttons {
+    padding: 24px;
+    text-align: center;
+    align-self: center;
+}
+
+section.images {
+    padding: 24px;
+    text-align: center;
+    align-self: center;
+}
+
+div.background {
+    display: inline-flex;
+    height: 520px;
+    width: 520px;
+    margin: 0 80px;
+    margin-top: 16px;
+    border: 2px outset rgba(243, 243, 76, 0.8);
+    border-radius: 48px;
+}
+
+.innerSection {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+div.innerSection-image {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 48px;
+}
+
+p.image {
+    font-family: Roboto;
+    font-size: 32px;
+    text-align: center;
+    color: rgba(211, 211, 211, 0.8);
+    padding: 40px;
+    line-height: 56px;
+    margin: 5% 0 5% 0;
+}
+
+.linkButton {
+    padding: 12px;
+    display: inline-block;
+    border: 1px solid rgba(243, 243, 76, 0.8);
+    border-radius: 8px;
+    margin: 0 16px;
+    background-color: rgb(231, 231, 231, 0.1);
+    color:rgb(230, 230, 112, 0.8);
+    font-family: Roboto;
+}
+
+.linkButton:hover {
+    background-color:rgb(231, 231, 231, 0.4);
+    color:rgb(230, 230, 112, 0.8);
+    transition: background-color 0.2s;
+}
+
+.contentButton {
+    display: inline-block;
+    padding: 0 8px;
+    margin: 0;
+}
+span.contentButton{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}

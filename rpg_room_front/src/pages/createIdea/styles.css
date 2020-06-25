@@ -1,0 +1,51 @@
+.create-innerSection {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.create-title {
+    text-align: center;
+    color: lightgrey;
+    padding-top: 24px;
+    font-size: 80px;
+    font-family: 'Morris Roman';
+    display: inline-flex;
+}
+
+.create-word {
+    color: lightgrey;
+    font-size: 40px;
+    font-family: "Pangolin";
+}
+
+.create-word-form {
+    margin: 10px 0;
+    padding-left: 10px;
+    color: lightgrey;
+    font-size: 24px;
+    font-family: "Roboto";
+    background-color:rgba(160, 160, 160, 0.4);
+    border: 1px solid rgba(243, 243, 76, 0.8);
+    border-radius: 8px;
+}
+
+span.create-icon {
+    display: inline-flex;
+    padding-top: 48px;
+    font-size: 40px;
+    color: rgb(230, 230, 112, 0.8);
+    position: absolute;
+    left: 5%;
+}
+
+header {
+    text-align: center;
+}
+
+form {
+    padding: 0 100px;
+}
+fieldset {
+    margin: 40px 0;
+}
