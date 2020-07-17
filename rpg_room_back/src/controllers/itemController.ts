@@ -3,7 +3,7 @@ import knex from '../database/connection';
 
 class ItemController {
     async index(request:Request, response:Response){
-        const { user_id, title, type, ambient, description, timeline, creation_date } = request.query;
+        const { user_id, title, type_id, ambient_id, description, timeline_id, creation_date } = request.query;
         const items = await knex('items').select('*')
             .where((qb) => {
                 if(user_id) {
@@ -12,17 +12,17 @@ class ItemController {
                 if(title) {
                     qb.where('title', "=", String(title));
                 }
-                if(type) {
-                    qb.where('type', "=", String(type));
+                if(type_id) {
+                    qb.where('type', "=", String(type_id));
                 }
-                if(ambient){
-                    qb.where('ambient', "=", String(ambient));
+                if(ambient_id){
+                    qb.where('ambient', "=", String(ambient_id));
                 }
                 if(description) {
                     qb.where('description', "=", String(description));
                 }
-                if(timeline) {
-                    qb.where('timeline', "=", String(timeline));
+                if(timeline_id) {
+                    qb.where('timeline', "=", String(timeline_id));
                 }
                 if(creation_date){
                     qb.whereBetween('creation_date', [`${String(creation_date)} 00:00:00`,`${String(creation_date)} 23:59:59`]);
@@ -36,10 +36,10 @@ class ItemController {
                 id: item.id,
                 user_id: item.user_id,
                 title: item.title,
-                type: item.type,
-                ambient: item.ambient,
+                type: item.type_id,
+                ambient: item.ambient_id,
                 description: item.description,
-                timeline: item.timeline,
+                timeline: item.timeline_id,
                 creation_date: item.creation_date,
             }
         })
@@ -63,20 +63,20 @@ class ItemController {
         const {
             user_id,
             title,
-            type,
-            ambient,
+            type_id,
+            ambient_id,
             description,
-            timeline,
+            timeline_id,
             creation_date,
         } = request.body;
 
         const item = {
             user_id,
             title,
-            type,
-            ambient,
+            type_id,
+            ambient_id,
             description,
-            timeline,
+            timeline_id,
             creation_date,
         }
 

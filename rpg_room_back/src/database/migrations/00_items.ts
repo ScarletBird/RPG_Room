@@ -9,7 +9,7 @@ export async function up(knex: Knex) {
         table.integer('type_id').notNullable();
         table.integer('ambient_id').notNullable();
         table.string('description').notNullable();
-        table.string('timeline').notNullable();
+        table.integer('timeline_id').notNullable();
         table.dateTime('creation_date').notNullable();
     })
 }

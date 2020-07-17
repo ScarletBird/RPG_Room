@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ChangeEvent } from 'react';
+import React, { useState, useEffect, ChangeEvent, FormEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 
@@ -51,18 +51,47 @@ const CreateIdea = () => {
 
     const [selectedType, setSelectedType] = useState(0);
     const [selectedAmbient, setSelectedAmbient] = useState(0);
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
 
-    async function handleSubmit() {
-    
+    async function handleSubmit(event: FormEvent) {
+        event.preventDefault();
+
+        const data = {
+            "user_id": 1,
+            "title": title,
+            "type_id": selectedType,
+            "ambient_id": selectedAmbient,
+            "description": description,
+            "timeline_id": timeSlider,
+            "creation_date": new Date(),
+        }
+
+        await api.post('items', data);
+
+        alert('Item criado!');
+
 
     }
 
     function handleSlider(event: ChangeEvent<HTMLInputElement>) {
-        const sliderValue = event.target.value
+        const sliderValue = event.target.value;
 
         //console.log(sliderValue);
 
         setTimeSlider(Number(sliderValue));
+    }
+
+    function handleTitle(event: ChangeEvent<HTMLInputElement>) {
+        const titleValue = event.target.value;
+
+        setTitle(titleValue);
+    }
+
+    function handleDescription(event: ChangeEvent<HTMLTextAreaElement>) {
+        const descriptionValue = event.target.value;
+
+        setDescription(descriptionValue);
     }
 
     function handleSelectType(id: number){
@@ -105,11 +134,15 @@ const CreateIdea = () => {
         <div className="create-innerSection">
             <header>
                 <Link to="/">
-                    <span className="create-icon">
+                    <span className="create-icon-back">
                         <FiArrowLeft />
                     </span>
                 </Link>
                 <h1 className="create-title">Conte uma história</h1>
+                
+                <span className="create-icon-submit" onClick={handleSubmit}>
+                    <p>Submeter ideia</p>
+                </span>
             </header>
             <form onSubmit={handleSubmit}>
                 <div>
@@ -117,7 +150,12 @@ const CreateIdea = () => {
                         <h1 className="create-word">
                             Título
                         </h1>
-                        <input type="text" placeholder="Título" className="create-word-form"/>
+                        <input
+                            type="text"
+                            placeholder="Título"
+                            className="create-word-form"
+                            onChange={handleTitle}
+                        />
                     </fieldset>
                     <fieldset className="create-type-ambient">
                         <div>
@@ -190,7 +228,8 @@ const CreateIdea = () => {
                         <input 
                             type="range"
                             min="1"
-                            max="6" 
+                            max="6"
+                            defaultValue="1"
                             className="create-slider"
                             onChange={handleSlider}/>
 
@@ -200,7 +239,10 @@ const CreateIdea = () => {
                         <h1 className="create-word">
                             Descrição
                         </h1>
-                        <textarea placeholder="Escreva aqui a descrição"></textarea>
+                        <textarea 
+                            placeholder="Escreva aqui a descrição"
+                            onChange={handleDescription}
+                        ></textarea>
                     </fieldset>
                 </div>
             </form>
