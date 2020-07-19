@@ -25,7 +25,7 @@ class ItemController {
                     qb.where('timeline', "=", String(timeline_id));
                 }
                 if(creation_date){
-                    qb.whereBetween('creation_date', [`${String(creation_date)} 00:00:00`,`${String(creation_date)} 23:59:59`]);
+                    qb.whereBetween('creation_date', [`${String(creation_date)}T00:00:00.000Z`,`${String(creation_date)}T23:59:59.999Z`]);
                 }
             });
         // Seleciona items da database

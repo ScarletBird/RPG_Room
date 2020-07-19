@@ -42,7 +42,7 @@ export default function Home(){
                         </span>
                         <p className="contentButton">Escrever uma nova ideia</p>
                     </Link>
-                    <Link to="/" className="linkButton">
+                    <Link to="/browse" className="linkButton">
                         <span className="contentButton">
                             <FiSearch />
                         </span>
