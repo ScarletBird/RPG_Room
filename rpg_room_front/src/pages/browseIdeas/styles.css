@@ -17,11 +17,13 @@
     color: lightgrey;
     font-size: 40px;
     font-family: "Pangolin";
-    width: 50%;
+    width: 100%;
+    text-align: center;
 }
 
 span.browse-icon-back {
     display: inline-flex;
+
     padding-top: 48px;
     font-size: 40px;
     color: rgb(230, 230, 112, 0.9);
@@ -31,14 +33,19 @@ span.browse-icon-back {
 
 .browse-outer-grid {
     text-align: center;
-    display: inline-flex;
-    width: 100%;
-    padding: 0px 100px;
+    display: inline-block;
+    width: 50%;
+    padding: 0px 10px;
+}
+
+.browse-inner-grid {
+    margin: 0px 20px;
 }
 
 .browse-grid {
     display: inline-flex;
-    gap: 5px;
+    justify-content: space-evenly;
+    width: 100%;
     padding: 0;
 }
 

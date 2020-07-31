@@ -55,7 +55,7 @@ const BrowseIdeas = () => {
                     <h1 className="browse-title">Busque uma história</h1>
                 </header>
                 <div className="browse-outer-grid">
-                    <div>
+                    <div className="browse-inner-grid">
                         <h1 className="browse-word">
                             Tipo
                         </h1>
@@ -84,7 +84,7 @@ const BrowseIdeas = () => {
                         </ul>
                     </div>
 
-                    <div>
+                    <div className="browse-inner-grid">
                         <h1 className="browse-word">
                             Ambiente
                         </h1>
@@ -112,6 +112,11 @@ const BrowseIdeas = () => {
                             ))}
                         </ul>
                     </div>
+                </div>
+                <div className="browse-outer-grid">
+                    <h1 className="browse-word">
+                            Tipo
+                    </h1>
                 </div>
             </div>
         </div>
